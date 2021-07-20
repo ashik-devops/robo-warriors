@@ -21,8 +21,9 @@ class App extends Component {
         console.log("event", event.target.value);
     }
     render(){
-        const filteredRobots= this.state.robots.filter(robots=>{
-            return robots.name.toLowerCase().includes(this.state.searchField.toLowerCase())})
+        const { robots, searchField}= this.state;
+        const filteredRobots= robots.filter(robots=>{
+            return robots.name.toLowerCase().includes(searchField.toLowerCase())})
         
             return !filteredRobots.length ?
             <div className="tc">
